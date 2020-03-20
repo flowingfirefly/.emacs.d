@@ -47,3 +47,18 @@
    `(company-preview-common ((t (:inherit default :background ,(color-lighten-name bg 10)))))
    `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
    `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
+
+(defun mac-switch-meta nil 
+  "switch meta between Option and Command"
+  (interactive)
+  (if (eq mac-option-modifier nil)
+      (progn 
+	(setq mac-option-modifier nil)
+	(setq mac-command-modifier 'meta)
+      )
+    (progn
+      (setq mac-option-modifier 'meta)
+      (setq mac-command-modifier 'hyper)
+      )))
+
+(mac-switch-meta)
