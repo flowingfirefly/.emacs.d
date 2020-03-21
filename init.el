@@ -62,3 +62,12 @@
       )))
 
 (mac-switch-meta)
+
+(setq backup-directory-alist '(("." . "~/.emacs.d/auto-save-list")))
+
+(defun resize-frame-width nil
+  (interactive)
+  (message "Oops!")
+  (set-frame-width (selected-frame) 80))
+
+(global-set-key (quote [f9]) (quote resize-frame-width))
