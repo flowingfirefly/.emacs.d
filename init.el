@@ -66,8 +66,11 @@
 (setq backup-directory-alist '(("." . "~/.emacs.d/auto-save-list")))
 
 (defun resize-frame-width nil
+  "resize frame width to 80 columns."
   (interactive)
-  (message "Oops!")
   (set-frame-width (selected-frame) 80))
 
 (global-set-key (quote [f9]) (quote resize-frame-width))
+
+;;; hide scroll bar
+(scroll-bar-mode -1)
