@@ -68,9 +68,16 @@
 (defun resize-frame-width nil
   "resize frame width to 80 columns."
   (interactive)
+  (message "done.")
   (set-frame-width (selected-frame) 80))
 
 (global-set-key (quote [f9]) (quote resize-frame-width))
 
 ;;; hide scroll bar
 (scroll-bar-mode -1)
+
+;;; enable ligature
+(mac-auto-operator-composition-mode)
+
+;;; enable column number mode
+(column-number-mode)
