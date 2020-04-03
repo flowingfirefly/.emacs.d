@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/scheme")
 (add-to-list 'load-path "~/.emacs.d/company")
+(add-to-list 'load-path "~/.emacs.d/spooc")
 
 (autoload
   'paredit-mode "paredit"
@@ -15,6 +16,17 @@
   'company-mode "company"
   "Company is a text completion framework for Emacs."
   t)
+
+(autoload
+  'spooc-mode "spooc-mode"
+  "spooc text mode."
+  t)
+
+(add-to-list 'auto-mode-alist '("\\.spoc\\'" . spooc-mode))
+
+(add-hook 'spooc-mode-hook
+	  (lambda ()
+	    (company-mode 1)))
 
 (add-hook 'scheme-mode-hook
   (lambda ()
