@@ -93,3 +93,8 @@
 
 ;;; enable column number mode
 (column-number-mode)
+
+(setq-default indent-tabs-mode nil)
+
+(custom-set-variables
+ '(tab-width 2))
